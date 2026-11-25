@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hairstyle Studio — шаш үлгілерінің шеберханасы</title>
+  <meta name="description" content="Hairstyle Studio: үйлену тойына, кешке, мектеп бітіру кешіне және күнделікті өмірге арналған шаш үлгілері. Алматы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ МӘЗІР ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="logo" aria-label="Hairstyle Studio — басты бет">
+      <span class="logo__mark">H</span>
+      <span class="logo__text">Hairstyle <em>Studio</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Негізгі мәзір">
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link">Басты бет</a></li>
+        <li><a href="#catalog" class="nav__link">Каталог</a></li>
+        <li><a href="#services" class="nav__link">Қызметтер</a></li>
+        <li><a href="#master" class="nav__link">Шебер туралы</a></li>
+        <li><a href="#reviews" class="nav__link">Пікірлер</a></li>
+        <li><a href="#contacts" class="nav__link">Байланыс</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="#catalog" class="fav-counter" id="favCounter" aria-label="Таңдаулылар" title="Таңдаулылар">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+        <span class="fav-counter__num" id="favNum">0</span>
+      </a>
+      <a href="#booking" class="btn btn--gold btn--sm">Жазылу</a>
+      <button class="burger" id="burger" aria-label="Мәзірді ашу" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <img class="hero__img"
+       src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1920&q=80"
+       srcset="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=75 800w,
+               https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1400&q=80 1400w,
+               https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1920&q=80 1920w"
+       sizes="100vw" alt="Жұмсақ толқынды әдемі шаш үлгісі" fetchpriority="high">
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <p class="eyebrow reveal">Шаш үлгілерінің шеберханасы · Алматы</p>
+    <h1 class="hero__title reveal">Сізді даралайтын<br><em>шаш үлгісі</em></h1>
+    <p class="hero__text reveal">Үйлену тойына, мерекелік кешке немесе жай ғана көңіл көтеретін күнге лайық бейне. Әр шаш үлгісін жүзіңіздің пішіні мен мінезіңізге қарай жасаймыз.</p>
+    <div class="hero__btns reveal">
+      <a href="#catalog" class="btn btn--gold">Образ таңдау</a>
+      <a href="#booking" class="btn btn--ghost">Жазылу</a>
+    </div>
+  </div>
+  <a href="#catalog" class="hero__scroll" aria-label="Төмен айналдыру"><span></span></a>
+</section>
+
+<!-- ============ КАТАЛОГ ============ -->
+<section class="section catalog" id="catalog">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Каталог</p>
+      <h2 class="section__title">Шаш үлгілерінің жинағы</h2>
+      <p class="section__lead">Өзіңізге ұнаған бейнені таңдаңыз. Суретті басып, толық ақпаратпен танысыңыз.</p>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Санат бойынша сүзгі">
+      <button class="chip is-active" data-cat="all">Барлығы</button>
+      <button class="chip" data-cat="wedding">Үйлену тойы</button>
+      <button class="chip" data-cat="evening">Кешкі</button>
+      <button class="chip" data-cat="prom">Мектеп бітіру</button>
+      <button class="chip" data-cat="daily">Күнделікті</button>
+      <button class="chip" data-cat="kids">Балалар</button>
+      <button class="chip" data-cat="men">Ерлер</button>
+      <button class="chip chip--fav" data-cat="fav">♥ Таңдаулылар</button>
+    </div>
+
+    <!-- Ұзындық бойынша іріктеу -->
+    <div class="length reveal" id="length">
+      <span class="length__label">Шаш ұзындығы бойынша іріктеу:</span>
+      <div class="length__btns" role="group" aria-label="Шаш ұзындығы">
+        <button class="len-btn is-active" data-len="all">Кез келген</button>
+        <button class="len-btn" data-len="short"><i class="len-ico len-ico--s"></i>Қысқа</button>
+        <button class="len-btn" data-len="medium"><i class="len-ico len-ico--m"></i>Орта</button>
+        <button class="len-btn" data-len="long"><i class="len-ico len-ico--l"></i>Ұзын</button>
+      </div>
+    </div>
+
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="grid__empty" id="gridEmpty" hidden>Бұл сүзгі бойынша әзірге шаш үлгісі табылмады. Басқа санатты таңдап көріңіз.</p>
+  </div>
+</section>
+
+<!-- ============ ТАНЫМАЛ БЕЙНЕЛЕР ============ -->
+<section class="section popular" id="popular">
+  <div class="container">
+    <div class="section__head section__head--row reveal">
+      <div>
+        <p class="eyebrow">Клиенттердің таңдауы</p>
+        <h2 class="section__title">Танымал бейнелер</h2>
+      </div>
+      <div class="slider__nav">
+        <button class="round-btn" id="slPrev" aria-label="Алдыңғы">←</button>
+        <button class="round-btn" id="slNext" aria-label="Келесі">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="slider reveal" id="slider" tabindex="0" aria-label="Танымал шаш үлгілері"></div>
+  <div class="slider__dots" id="slDots"></div>
+</section>
+
+<!-- ============ ҚЫЗМЕТТЕР ============ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Қызметтер</p>
+      <h2 class="section__title">Қызметтер мен бағалар</h2>
+      <p class="section__lead">Бағаға кәсіби құралдар, сәндеу өнімдері және бекіту лагы кіреді.</p>
+    </div>
+
+    <ul class="price-list">
+      <li class="price reveal">
+        <div class="price__top">
+          <h3 class="price__name">Сәндеу</h3><span class="price__dots"></span>
+          <span class="price__val">10 000 ₸-ден</span>
+        </div>
+        <p class="price__desc">Толқын, бұйра немесе жатық сәндеу. Шаштың ұзындығына қарай 40–60 минут.</p>
+      </li>
+      <li class="price reveal">
+        <div class="price__top">
+          <h3 class="price__name">Үйлену шашы</h3><span class="price__dots"></span>
+          <span class="price__val">40 000 ₸-ден</span>
+        </div>
+        <p class="price__desc">Қалыңдыққа арналған шаш үлгісі: орамал мен сәукелеге, тәжге немесе гүлге бейімдейміз. Шаш бүкіл той бойы бұзылмайды.</p>
+      </li>
+      <li class="price reveal">
+        <div class="price__top">
+          <h3 class="price__name">Сынақ шаш үлгісі</h3><span class="price__dots"></span>
+          <span class="price__val">20 000 ₸</span>
+        </div>
+        <p class="price__desc">Той алдында бейнені бірге таңдап, алдын ала жасап көреміз. Кейін негізгі шаш үлгісіне тапсырыс берсеңіз, 5 000 ₸ жеңілдік.</p>
+      </li>
+      <li class="price reveal">
+        <div class="price__top">
+          <h3 class="price__name">Өрім өру</h3><span class="price__dots"></span>
+          <span class="price__val">8 000 ₸-ден</span>
+        </div>
+        <p class="price__desc">Француз өрімі, балық құйрық, көлемді және гүлді өрімдер. Ересектерге де, балаларға да.</p>
+      </li>
+      <li class="price reveal">
+        <div class="price__top">
+          <h3 class="price__name">Үйге шығу</h3><span class="price__dots"></span>
+          <span class="price__val">+10 000 ₸</span>
+        </div>
+        <p class="price__desc">Шебер барлық құралымен үйіңізге, мейрамханаға немесе қонақүйге келеді. Таңғы 7:00-ден бастап.</p>
+      </li>
+    </ul>
+
+    <div class="services__cta reveal">
+      <p>Нақты бағаны шаштың ұзындығы мен қалыңдығына қарай шебер айтады.</p>
+      <a href="#booking" class="btn btn--gold">Жазылу</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ШЕБЕР ТУРАЛЫ ============ -->
+<section class="section master" id="master">
+  <div class="container master__inner">
+    <figure class="master__photo reveal">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80"
+           loading="lazy" decoding="async" alt="Шебер Сәуле Ахметова" class="warm">
+      <figcaption class="master__badge">
+        <strong>9</strong><span>жылдық<br>тәжірибе</span>
+      </figcaption>
+    </figure>
+
+    <div class="master__text">
+      <p class="eyebrow reveal">Шебер туралы</p>
+      <h2 class="section__title reveal">Сәуле Ахметова</h2>
+      <p class="reveal">Шаш үлгісімен тоғыз жылдан бері айналысамын. Мен үшін ең бастысы — әйелдің айнаға қарап, өзін тани алуы. Сондықтан ешқашан біреудің бейнесін көшірмеймін: әр клиенттің шашына, жүзіне және сол күнгі көңіл күйіне сай үлгі ойлап табамын.</p>
+      <p class="reveal">Мәскеу мен Стамбулдағы шеберлік сыныптарынан өттім, қазір жас шеберлерге өзім сабақ беремін. Тек кәсіби, шашқа зиянсыз өнімдермен жұмыс істеймін.</p>
+
+      <ul class="stats">
+        <li class="stat reveal"><strong data-count="2400">0</strong><span>қанағаттанған клиент</span></li>
+        <li class="stat reveal"><strong data-count="650">0</strong><span>үйлену тойы</span></li>
+        <li class="stat reveal"><strong data-count="30">0</strong><span>сертификат пен курс</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ПІКІРЛЕР ============ -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Пікірлер</p>
+      <h2 class="section__title">Клиенттер не дейді</h2>
+    </div>
+
+    <div class="reviews__grid">
+      <article class="review reveal">
+        <div class="stars" aria-label="5 жұлдыздан 5">★★★★★</div>
+        <p class="review__text">«Тойымда шашым таңертеңнен түн ортасына дейін бір талы да бұзылмады. Сынақ кезінде Сәуле менің не қалайтынымды сөзсіз түсінді. Суреттерге қарап әлі күнге дейін қуанамын!»</p>
+        <footer class="review__author">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80" loading="lazy" alt="Аружан" class="warm">
+          <div><strong>Аружан</strong><span>Үйлену шашы</span></div>
+        </footer>
+      </article>
+
+      <article class="review reveal">
+        <div class="stars" aria-label="5 жұлдыздан 5">★★★★★</div>
+        <p class="review__text">«Мектеп бітіру кешіне голливуд толқынын жасаттым. Сыныптастарымның бәрі қайда жасаттың деп сұрады. Салон жайлы, шебердің қолы жеңіл, шашыма мүлде зиян келген жоқ».</p>
+        <footer class="review__author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&h=160&q=80" loading="lazy" alt="Мадина" class="warm">
+          <div><strong>Мадина</strong><span>Мектеп бітіру</span></div>
+        </footer>
+      </article>
+
+      <article class="review reveal">
+        <div class="stars" aria-label="5 жұлдыздан 5">★★★★★</div>
+        <p class="review__text">«Қызымның тұсаукесеріне үйге шақырдым. Сәуле уақытында келді, бізге де, балаға да әдемі өрім өріп берді. Бәрі тез, ұқыпты әрі көңілді өтті. Рақмет!»</p>
+        <footer class="review__author">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80" loading="lazy" alt="Айгерім" class="warm">
+          <div><strong>Айгерім</strong><span>Үйге шығу</span></div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ЖАЗЫЛУ ============ -->
+<section class="section booking" id="booking">
+  <div class="container booking__inner">
+    <div class="booking__intro reveal">
+      <p class="eyebrow">Жазылу</p>
+      <h2 class="section__title">Өзіңізге ыңғайлы күнді таңдаңыз</h2>
+      <p>Өтінімді қалдырыңыз, біз 30 минут ішінде хабарласып, уақытты нақтылаймыз. Мессенджер ыңғайлы болса, бірден WhatsApp немесе Telegram арқылы жазыңыз.</p>
+      <div class="messengers">
+        <a href="#" class="btn btn--wa" id="waBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#" class="btn btn--tg" id="tgBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+
+    <form class="form reveal" id="bookingForm" novalidate>
+      <div class="field">
+        <label for="fName">Атыңыз</label>
+        <input id="fName" name="name" type="text" autocomplete="given-name" placeholder="Мысалы, Аружан" required>
+        <span class="field__err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="fPhone">Телефон</label>
+        <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (7__) ___-__-__" required>
+        <span class="field__err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="fStyle">Шаш үлгісі</label>
+        <select id="fStyle" name="style" required>
+          <option value="">Таңдаңыз</option>
+        </select>
+        <span class="field__err" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="fDate">Күні</label>
+        <input id="fDate" name="date" type="date" required>
+        <span class="field__err" aria-live="polite"></span>
+      </div>
+      <div class="field field--full">
+        <label for="fMsg">Пікір <small>(міндетті емес)</small></label>
+        <textarea id="fMsg" name="message" rows="3" placeholder="Тілектеріңіз: уақыты, шаш ұзындығы, үйге шақыру қажет пе..."></textarea>
+      </div>
+      <button type="submit" class="btn btn--gold btn--full">Өтінім жіберу</button>
+      <p class="form__note">Батырманы басу арқылы сіз жеке деректеріңізді өңдеуге келісім бересіз.</p>
+      <div class="form__success" id="formSuccess" hidden role="status">
+        <strong>Рақмет!</strong> Өтініміңіз қабылданды. Жақын арада сізге хабарласамыз.
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ ФУТЕР ============ -->
+<footer class="footer" id="contacts">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <a href="#home" class="logo logo--light"><span class="logo__mark">H</span><span class="logo__text">Hairstyle <em>Studio</em></span></a>
+      <p class="footer__about">Ерекше күндерге және күнделікті өмірге арналған шаш үлгілері.</p>
+    </div>
+    <div class="footer__col">
+      <h3>Мекенжай</h3>
+      <p>Алматы қ., Абай даңғылы, 52<br>2-қабат, 205-кеңсе</p>
+      <p><a href="tel:+77771234567">+7 777 123 45 67</a></p>
+    </div>
+    <div class="footer__col">
+      <h3>Жұмыс уақыты</h3>
+      <p>Дүйсенбі – сенбі: 09:00 – 20:00<br>Жексенбі: 10:00 – 18:00</p>
+      <p class="muted">Той күндері — таңғы 6:00-ден бастап</p>
+    </div>
+    <div class="footer__col">
+      <h3>Instagram</h3>
+      <p><a href="https://instagram.com/hairstyle.studio.kz" target="_blank" rel="noopener" class="insta">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg>
+        @hairstyle.studio.kz</a></p>
+      <p class="muted">Жаңа жұмыстар күн сайын</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="map">
+      <iframe title="Салонның картадағы орны"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=76.9150%2C43.2340%2C76.9350%2C43.2440&layer=mapnik&marker=43.2390%2C76.9250"
+        loading="lazy"></iframe>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Hairstyle Studio. Барлық құқықтар қорғалған.</p>
+  </div>
+</footer>
+
+<!-- ============ ТОЛЫҚ ЭКРАНДЫ КӨРІНІС ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Жабу">×</button>
+  <button class="lightbox__arrow lightbox__arrow--prev" id="lbPrev" aria-label="Алдыңғы сурет">←</button>
+  <button class="lightbox__arrow lightbox__arrow--next" id="lbNext" aria-label="Келесі сурет">→</button>
+  <div class="lightbox__body">
+    <div class="lightbox__media">
+      <img id="lbImg" src="" alt="" class="warm">
+      <button class="heart heart--lg" id="lbHeart" aria-pressed="false" aria-label="Таңдаулыларға қосу" title="Таңдаулыларға қосу">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.6 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+      </button>
+    </div>
+    <div class="lightbox__info">
+      <p class="eyebrow" id="lbCat"></p>
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc" class="lightbox__desc"></p>
+      <dl class="specs">
+        <div><dt>Атауы</dt><dd id="lbName"></dd></div>
+        <div><dt>Шаш ұзындығы</dt><dd id="lbLen"></dd></div>
+        <div><dt>Жұмыс уақыты</dt><dd id="lbTime"></dd></div>
+        <div><dt>Бағасы</dt><dd id="lbPrice"></dd></div>
+      </dl>
+      <a href="#booking" class="btn btn--gold btn--full" id="lbBook">Осы үлгіге жазылу</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
